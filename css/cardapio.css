@@ -8,37 +8,47 @@
   margin: 0 auto;
 }
 
+.cardapio-bg {
+  background-color: white;
+  padding-bottom: 64px;
+}
+
 .pastel {
-  background: linear-gradient(
-    0deg,
-    rgba(101, 1, 1, 1) 91%,
-    rgba(1, 101, 58, 0) 0%
-  );
+  background-image: url(../imgs/bg-withe.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   border-radius: 12px;
   position: relative;
+  outline: 4px solid white;
+  outline-offset: -3px; /* puxa a borda pra dentro */
   overflow: hidden;
-  box-shadow: 0px 3px 24px -1px rgba(0, 0, 0, 0.37);
-  -webkit-box-shadow: 0px 3px 24px -1px rgba(0, 0, 0, 0.37);
-  -moz-box-shadow: 0px 3px 24px -1px rgba(0, 0, 0, 0.37);
 }
 
 .pastel img {
   width: 100%;
-  border-radius: 12px 12px 0 0;
+
   object-fit: cover;
+  border-radius: 8px;
 }
 
 .preco {
   position: absolute;
-  top: 1px;
+  top: 0px;
   right: 0px;
-  background-color: var(--VINHO);
+  background-color: var(--CINZACLARO);
   color: var(--AMARELO);
   padding: 8px 16px;
   font-family: "Baloo 2", sans-serif;
   font-weight: 700;
   font-size: 24px;
   border-radius: 0 12px;
+}
+
+.div-cardapio {
+  display: grid;
+  justify-items: center;
+  padding: 64px;
 }
 
 /* =======================
@@ -230,8 +240,8 @@
 @media (max-width: 1366px) {
   .cardapio {
     grid-template-columns: repeat(4, 1fr);
-    padding: 8px;
-    gap: 8px;
+    padding: 16px;
+    gap: 16px;
     font-size: 16px;
   }
 }
@@ -239,8 +249,8 @@
 @media (max-width: 1023px) {
   .cardapio {
     grid-template-columns: repeat(3, 1fr);
-    padding: 8px;
-    gap: 8px;
+    padding: 16px;
+    gap: 16px;
     font-size: 16px;
   }
   .tipo-pastel {
@@ -251,8 +261,8 @@
 @media (max-width: 767px) {
   .cardapio {
     grid-template-columns: repeat(2, 1fr);
-    padding: 8px;
-    gap: 8px;
+    padding: 16px;
+    gap: 16px;
     font-size: 16px;
   }
   .bt-action-add {

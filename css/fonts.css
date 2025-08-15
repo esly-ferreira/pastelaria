@@ -4,7 +4,7 @@
   font-family: "Ubuntu", sans-serif;
   color: var(--VINHO);
   font-weight: 400;
-  font-size: 32px;
+  font-size: 24px;
   padding-bottom: 12px;
   letter-spacing: 12px;
 }
@@ -14,7 +14,10 @@
   color: var(--PRETO);
   font-weight: 700;
   line-height: 95%;
-  font-size: 110px;
+  font-size: 64px;
+}
+.legenda-pagina-destaque{
+  color: var(--AMARELO);
 }
 
 .local p {
@@ -56,6 +59,6 @@
 
 @media (max-width: 768px) {
   .legenda-pagina {
-    font-size: 36px;
+    font-size: 60px;
   }
 }

@@ -3,11 +3,13 @@
 // =======================
 (() => {
   const cursor = document.querySelector(".cursor");
-  let mouseX = 0, mouseY = 0;
-  let posX = 0, posY = 0;
+  let mouseX = 0,
+    mouseY = 0;
+  let posX = 0,
+    posY = 0;
   const speed = 0.1;
 
-  document.addEventListener("mousemove", e => {
+  document.addEventListener("mousemove", (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
   });
@@ -50,7 +52,7 @@
 // =======================
 (() => {
   const bgImg = document.querySelector(".bg-img");
-  document.addEventListener("mousemove", e => {
+  document.addEventListener("mousemove", (e) => {
     const x = (e.clientX / window.innerWidth - 0.5) * 10;
     const y = (e.clientY / window.innerHeight - 0.5) * 10;
     bgImg.style.transform = `translate(${x}px, ${y}px)`;
@@ -72,7 +74,7 @@
   const confirmarPedidoBtn = document.getElementById("confirmar-pedido");
   const cancelarPedidoBtn = document.getElementById("cancelar-pedido");
 
-  const parsePreco = str =>
+  const parsePreco = (str) =>
     parseFloat(str.replace("R$ ", "").replace(",", ".")) || 0;
 
   function atualizarCarrinho() {
@@ -118,7 +120,7 @@
   }
 
   // Adicionar item ao carrinho
-  document.querySelectorAll(".bt-action-add").forEach(btn => {
+  document.querySelectorAll(".bt-action-add").forEach((btn) => {
     btn.addEventListener("click", () => {
       const pastelDiv = btn.closest(".pastel");
       const tipo = pastelDiv.querySelector(".tipo-pastel").innerText.trim();
@@ -160,9 +162,9 @@
       const precoNum = parsePreco(info.preco);
       const totalItem = precoNum * info.quantidade;
       totalGeral += totalItem;
-      mensagem += `• ${info.quantidade}x ${tipo} - ${info.preco} | Total: R$ ${totalItem
-        .toFixed(2)
-        .replace(".", ",")}\n`;
+      mensagem += `• ${info.quantidade}x ${tipo} - ${
+        info.preco
+      } | Total: R$ ${totalItem.toFixed(2).replace(".", ",")}\n`;
     }
 
     mensagem += `\nTotal Geral: R$ ${totalGeral
