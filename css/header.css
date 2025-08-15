@@ -46,5 +46,5 @@
 }
 
 .cabecalho a:hover{
-  color: white;
+  color: var(--VINHO);
 }
