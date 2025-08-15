@@ -499,3 +499,12 @@ var VanillaTilt = (function () {
   return VanillaTilt;
   
   }());
+    VanillaTilt.init(document.querySelectorAll(".troca-img"), {
+      max: 10,
+      speed: 100,
+      glare: true,
+      "max-glare": 0.1,
+      perspective: 1000,
+      transition: true,
+    });
+  
