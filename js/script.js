@@ -88,7 +88,7 @@
 
       const li = document.createElement("li");
       li.innerHTML = `
-        <span>${tipo} - ${info.preco}</span>
+        <span>${info.cod}, ${tipo} - ${info.preco}</span>
         <span>
           <button class="menos">-</button>
           ${info.quantidade}
@@ -119,15 +119,16 @@
     barraPedido.style.display = temItens ? "flex" : "none";
   }
 
-  // Adicionar item ao carrinho
+  // Adicionar item ao carrinho (captura também o COD)
   document.querySelectorAll(".bt-action-add").forEach((btn) => {
     btn.addEventListener("click", () => {
       const pastelDiv = btn.closest(".pastel");
       const tipo = pastelDiv.querySelector(".tipo-pastel").innerText.trim();
       const preco = pastelDiv.querySelector(".preco").innerText.trim();
+      const cod = pastelDiv.querySelector(".codigo").innerText.trim(); // Pega o COD
 
       if (!carrinho[tipo]) {
-        carrinho[tipo] = { preco, quantidade: 1 };
+        carrinho[tipo] = { preco, cod, quantidade: 1 };
       } else {
         carrinho[tipo].quantidade++;
       }
@@ -135,17 +136,17 @@
     });
   });
 
-  // =======================
-  // MODAL DO PEDIDO
-  // =======================
+  // Abrir modal do pedido
   enviarPedidoBtn.addEventListener("click", () => {
     modalPedido.style.display = "block";
   });
 
+  // Cancelar modal
   cancelarPedidoBtn.addEventListener("click", () => {
     modalPedido.style.display = "none";
   });
 
+  // Confirmar pedido
   confirmarPedidoBtn.addEventListener("click", () => {
     const endereco = document.getElementById("endereco").value.trim();
     const pagamento = document.getElementById("pagamento").value.trim();
@@ -155,35 +156,37 @@
       return;
     }
 
-    let mensagem = "Olá! Gostaria de pedir:\n";
+    let mensagem = "*Olá! Gostaria de fazer o seguinte pedido:*\n\n";
     let totalGeral = 0;
 
     for (const [tipo, info] of Object.entries(carrinho)) {
       const precoNum = parsePreco(info.preco);
       const totalItem = precoNum * info.quantidade;
       totalGeral += totalItem;
-      mensagem += `• ${info.quantidade}x ${tipo} - ${
-        info.preco
-      } | Total: R$ ${totalItem.toFixed(2).replace(".", ",")}\n`;
+
+      // Novo formato: Quantidade - COD, sabor pastel, valor unitário
+      mensagem += `${info.quantidade}x ${info.cod}, ${tipo} - R$ ${precoNum
+        .toFixed(2)
+        .replace(".", ",")}\n`;
     }
 
-    mensagem += `\nTotal Geral: R$ ${totalGeral
-      .toFixed(2)
-      .replace(".", ",")}\n`;
-    mensagem += `Endereço: ${endereco}\n`;
-    mensagem += `Pagamento: ${pagamento}`;
+    mensagem += `\n*Total Geral:* R$ ${totalGeral.toFixed(2).replace(".", ",")}\n`;
+    mensagem += `*Endereço:* ${endereco}\n`;
+    mensagem += `*Forma de Pagamento:* ${pagamento}`;
 
     const whatsappURL = `https://wa.me/5511958347430?text=${encodeURIComponent(
       mensagem
     )}`;
     window.open(whatsappURL, "_blank");
 
-    // Limpa carrinho
+    // Limpa o carrinho
     for (let key in carrinho) delete carrinho[key];
     atualizarCarrinho();
     modalPedido.style.display = "none";
   });
 })();
+
+
 
 document.querySelectorAll('.scroll-link').forEach(link => {
   link.addEventListener('click', function(e) {
