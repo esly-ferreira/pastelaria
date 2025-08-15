@@ -1,11 +1,23 @@
 /* =======================
    CARDÁPIO
 ======================= */
+
 .cardapio {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   margin: 0 auto;
+}
+
+.pastel.combo {
+  grid-column: span 2;
+}
+
+.pastel.combo > img {
+  width: 100%;
+  height: 212px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .cardapio-bg {
@@ -27,7 +39,6 @@
 
 .pastel img {
   width: 100%;
-
   object-fit: cover;
   border-radius: 8px;
 }
@@ -48,7 +59,7 @@
 .div-cardapio {
   display: grid;
   justify-items: center;
-  padding: 64px;
+  padding: 64px 64px 0px 64px;
 }
 
 /* =======================

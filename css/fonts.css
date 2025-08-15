@@ -16,7 +16,7 @@
   line-height: 95%;
   font-size: 64px;
 }
-.legenda-pagina-destaque{
+.legenda-pagina-destaque {
   color: var(--AMARELO);
 }
 
@@ -38,6 +38,18 @@
   color: var(--CINZACLARO);
   font-size: 12px;
   padding: 16px 0 0 16px;
+}
+
+.tamanho {
+  display: grid;
+  font-family: "Baloo 2", sans-serif;
+  color: var(--PRETO);
+  margin: 0 auto;
+  padding: 0 0 16px 16px;
+}
+
+.vinho {
+  color: var(--VINHO);
 }
 
 @media (max-width: 1366px) {

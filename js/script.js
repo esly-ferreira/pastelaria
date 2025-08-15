@@ -173,7 +173,7 @@
     mensagem += `Endereço: ${endereco}\n`;
     mensagem += `Pagamento: ${pagamento}`;
 
-    const whatsappURL = `https://wa.me/55119875828603?text=${encodeURIComponent(
+    const whatsappURL = `https://wa.me/1155987528603?text=${encodeURIComponent(
       mensagem
     )}`;
     window.open(whatsappURL, "_blank");
@@ -184,3 +184,21 @@
     modalPedido.style.display = "none";
   });
 })();
+
+document.querySelectorAll('.scroll-link').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault(); // previne o comportamento padrão do href
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      const offset = 150; // distância do topo
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth' // animação suave
+      });
+    }
+  });
+});
