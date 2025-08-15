@@ -173,7 +173,7 @@
     mensagem += `Endereço: ${endereco}\n`;
     mensagem += `Pagamento: ${pagamento}`;
 
-    const whatsappURL = `https://wa.me/1155987528603?text=${encodeURIComponent(
+    const whatsappURL = `https://wa.me/5511958347430?text=${encodeURIComponent(
       mensagem
     )}`;
     window.open(whatsappURL, "_blank");
