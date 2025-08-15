@@ -1,0 +1,282 @@
+/* =======================
+   CARDÁPIO
+======================= */
+.cardapio {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin: 0 auto;
+}
+
+.pastel {
+  background: linear-gradient(
+    0deg,
+    rgba(101, 1, 1, 1) 91%,
+    rgba(1, 101, 58, 0) 0%
+  );
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 3px 24px -1px rgba(0, 0, 0, 0.37);
+  -webkit-box-shadow: 0px 3px 24px -1px rgba(0, 0, 0, 0.37);
+  -moz-box-shadow: 0px 3px 24px -1px rgba(0, 0, 0, 0.37);
+}
+
+.pastel img {
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+  object-fit: cover;
+}
+
+.preco {
+  position: absolute;
+  top: 1px;
+  right: 0px;
+  background-color: var(--VINHO);
+  color: var(--AMARELO);
+  padding: 8px 16px;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  border-radius: 0 12px;
+}
+
+/* =======================
+   CARRINHO
+======================= */
+.carrinho {
+  position: fixed;
+  top: 78px;
+  right: 20px;
+  width: 280px;
+  max-height: 40vh; /* limita altura na tela */
+  padding: 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.615);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border: 1px solid rgba(255, 255, 255, 0.41);
+  color: var(--PRETO);
+  z-index: 50;
+  display: none;
+  overflow-y: auto;
+}
+
+.carrinho ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.carrinho li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 8px;
+}
+
+.carrinho li span.sabor {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.carrinho li span.botoes {
+  display: flex;
+  gap: 4px;
+}
+
+.carrinho button {
+  background: none;
+  border: 1px solid var(--AMARELO);
+  border-radius: 4px;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+
+.carrinho button.menos {
+  background: #ff4c4c; /* vermelho */
+  color: #410000;
+  border: none;
+}
+
+.carrinho button.mais {
+  background: #43ee48; /* verde */
+  color: #013303;
+  border: none;
+}
+
+/* =======================
+   BARRA DE PEDIDO INFERIOR
+======================= */
+.barra-pedido {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.615);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border: 1px solid rgba(255, 255, 255, 0.41);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  z-index: 100;
+  color: var(--CINZACLARO);
+  font-family: "Ubuntu", sans-serif;
+  display: none;
+}
+
+.barra-pedido button {
+  font-family: "Ubuntu", sans-serif;
+  background: var(--AMARELODEG);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #4c3b15;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.barra-pedido button:focus {
+  outline: 1px solid var(--AMARELOCLARO);
+  outline-offset: 4px;
+}
+
+.barra-pedido button:hover {
+  transform: scale(0.95);
+}
+
+/* =======================
+   MODAL DE PEDIDO
+======================= */
+.modal-pedido {
+  font-family: "Ubuntu", sans-serif;
+  color: var(--PRETO);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.75); /* mais visível */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 32px;
+  border-radius: 16px;
+  display: none;
+  width: 400px;
+  z-index: 2000;
+  transition: all 0.3s ease;
+}
+
+/* Inputs e selects */
+.modal-pedido input,
+.modal-pedido select {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--AMARELO);
+  background: var(--CINZACLARO);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.modal-pedido input:focus,
+.modal-pedido select:focus {
+  border-color: var(--VINHO);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-pedido label {
+  display: block;
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--PRETO);
+}
+
+.modal-pedido button {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  background: var(--AMARELODEG);
+  color: #4c3b15;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.modal-pedido button:hover {
+  transform: scale(0.97);
+  background: var(--AMARELO);
+}
+/* =======================
+   RESPONSIVIDADE
+======================= */
+@media (max-width: 1366px) {
+  .cardapio {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 8px;
+    gap: 8px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .cardapio {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 8px;
+    gap: 8px;
+    font-size: 16px;
+  }
+  .tipo-pastel {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 767px) {
+  .cardapio {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 8px;
+    gap: 8px;
+    font-size: 16px;
+  }
+  .bt-action-add {
+    padding: 6px;
+  }
+
+  .tipo-pastel {
+    font-size: 22px;
+  }
+
+  .preco {
+    font-size: 18px;
+    padding: 6px 12px;
+  }
+
+  .barra-pedido button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .modal-pedido input,
+  .modal-pedido select,
+  .modal-pedido button {
+    font-size: 14px;
+    padding: 6px;
+  }
+}

@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--A1);
+  font-family: "Segoe UI", "ubuntu", sans-serif;
+  padding: 24px;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  background-color: var(--BEGE);
+  height: 2000px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+p,
+a,
+blockquote,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+img[src$=".webp"] {
+  border-radius: 4px;
+}
+
+.max {
+  max-width: 1200px;
+}
+
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+  border: 1px solid rgba(255, 255, 255, 0.41);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+.fade {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.fade.hide {
+  opacity: 0;
+}

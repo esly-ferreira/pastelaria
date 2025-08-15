@@ -1,0 +1,21 @@
+.cabecalho {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%; /* largura do header */
+  max-width: 1200px; /* largura máxima */
+  padding: 0 20px; /* espaço interno horizontal */
+  height: 60px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.615);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border: 1px solid rgba(255, 255, 255, 0.41);
+  z-index: 10;
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}

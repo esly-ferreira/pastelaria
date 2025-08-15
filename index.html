@@ -1,0 +1,129 @@
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>DÃNITS</title>
+</head>
+
+<body>
+
+  <div class="cursor"></div>
+
+  <div id="carrinho-notificacao" class="carrinho">
+    <p>Itens no carrinho:</p>
+    <ul id="lista-carrinho"></ul>
+  </div>
+
+  <div id="barra-pedido" class="barra-pedido">
+    <button id="enviar-pedido">Enviar Pedido</button>
+  </div>
+
+  <div id="barra-pedido" class="barra-pedido">
+    <div style="flex: 1; font-weight: 700; text-align: left;" id="total-carrinho">
+      Total: R$ 0,00
+    </div>
+    <button id="enviar-pedido">Enviar Pedido</button>
+  </div>
+
+  <div class="carrinho">
+    <ul class="carrinho-itens" id="lista-carrinho"></ul>
+    <div class="carrinho-footer">
+      <button id="limpar-carrinho">Limpar</button>
+    </div>
+  </div>
+
+  <div id="modal-pedido" class="modal-pedido">
+    <h3>Finalize seu pedido</h3>
+    <label>Endereço:</label>
+    <input type="text" id="endereco" placeholder="Rua, número, bairro">
+    <label>Pagamento:</label>
+    <select id="pagamento">
+      <option value="Dinheiro">Dinheiro</option>
+      <option value="Pix">Pix</option>
+      <option value="Cartão">Cartão</option>
+    </select>
+    <button id="confirmar-pedido">Confirmar</button>
+    <button id="cancelar-pedido">Cancelar</button>
+  </div>
+
+
+  <section class="bg">
+    <div class="bg-img"></div>
+    <header class="cabecalho max">teste
+      <a href="#"></a>
+    </header>
+
+    <div class="hero max">
+      <div class="bloco-1">
+        <h2 class="legenda">DÃNITS</h2>
+        <h1 class="legenda-pagina">O MELHOR
+          PASTEL DA
+          REGIÃO</h1>
+        <address class="local">
+          <p>290 R. Uruguai</p>
+          <p>Franco da Rocha, São Paulo</p>
+          <span class="pin">
+          </span>
+        </address>
+        <a class="bt-action" href="#">PEDIR AGORA</a>
+      </div>
+
+      <figure class="bloco-2">
+        <img id="troca-img" class="fade" src="./imgs/goku.png" alt="" data-tilt data-tilt-full-page-listening data-tilt-reverse="true" data-tilt data-tilt-max="10">
+      </figure>
+
+    </div>
+
+  </section>
+
+  <section class="cardapio max">
+
+    <div class="pastel">
+      <span class="preco">R$ 12,99</span>
+      <img src="./imgs/pastel-icon.png" alt="">
+      <p class="codigo">COD - 02</p>
+      <p class="tipo-pastel">Frango </p>
+      <button class="bt-action-add">Adicionar<span><img src="./imgs/carrinho-add.svg" alt=""></span></button>
+    </div>
+
+    <div class="pastel">
+      <span class="preco">R$ 12,99</span>
+      <img src="./imgs/pastel-icon.png" alt="">
+      <p class="codigo">COD - 01</p>
+      <p class="tipo-pastel">Carne</p>
+      <button class="bt-action-add">Adicionar<span><img src="./imgs/carrinho-add.svg" alt=""></span></button>
+    </div>
+
+    <div class="pastel">
+      <span class="preco">R$ 12,99</span>
+      <img src="./imgs/pastel-icon.png" alt="">
+      <p class="codigo">COD - 063</p>
+      <p class="tipo-pastel">Aleatorio</p>
+      <button class="bt-action-add">Adicionar<span><img src="./imgs/carrinho-add.svg" alt=""></span></button>
+    </div>
+
+    <div class="pastel">
+      <span class="preco">R$ 12,99</span>
+      <img src="./imgs/pastel-icon.png" alt="">
+      <p class="codigo">COD - 6565</p>
+      <p class="tipo-pastel">Frango asd </p>
+      <button class="bt-action-add">Adicionar<span><img src="./imgs/carrinho-add.svg" alt=""></span></button>
+    </div>
+
+    <div class="pastel">
+      <span class="preco">R$ 12,99</span>
+      <img src="./imgs/pastel-icon.png" alt="">
+      <p class="codigo">COD - 54545</p>
+      <p class="tipo-pastel">AAAAAAAA</p>
+      <button class="bt-action-add">Adicionar<span><img src="./imgs/carrinho-add.svg" alt=""></span></button>
+    </div>
+
+  </section>
+
+  <script src="./js/script.js"></script>
+  <script src="./js/vanilla.js"></script>
+</body>
+
+</html>

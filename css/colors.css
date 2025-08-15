@@ -1,0 +1,13 @@
+:root {
+  --AMARELO: #fab217;
+  --AMARELODEG: linear-gradient(45deg, #fab217, #ffd700);
+  --AMARELOCLARO: #ffd16f;
+  --AMARELOCLARODEG: linear-gradient(45deg, #ffd16f, rgb(232, 213, 103));
+  --VINHO: #650101;
+  --LARANJA: #f26b38;
+  --BEGE: #fffaf0;
+  --MARROM: #4b2e2b;
+  --CINZACLARO: #f5f5f5;
+  --AZUL: #00cfff;
+  --PRETO: #333333;
+}

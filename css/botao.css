@@ -1,0 +1,63 @@
+.bt-action,
+.bt-action-add {
+  text-decoration: none;
+  background: var(--AMARELODEG);
+  border-radius: 10px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  border: none;
+  font-size: 24px;
+  color: #4c3b15;
+  display: inline-block; /* importante pro scale funcionar bem */
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: -1px 1px 59px -11px rgba(250, 178, 23, 0.75);
+  -webkit-box-shadow: -1px 1px 59px -11px rgba(250, 178, 23, 0.75);
+  -moz-box-shadow: -1px 1px 59px -11px rgba(250, 178, 23, 0.75);
+}
+
+.bt-action {
+  padding: 24px 56px;
+}
+
+.bt-action-add {
+  display: inline-flex;
+  align-items: center; /* centraliza verticalmente texto + ícone */
+  padding: 12px 18px;
+  font-size: 16px;
+  border-radius: 6px;
+  margin: 16px;
+}
+
+.bt-action-add span {
+  display: inline-flex;
+  margin-left: 4px;
+  width: 24px;
+}
+
+
+.bt-action:hover,
+.bt-action-add:hover {
+  transform: scale(0.9);
+  background: var(--AMARELODEG);
+}
+
+.bt-action:focus,
+.bt-action-add:focus {
+  outline: 2px solid var(--AMARELOCLARO);
+  outline-offset: 4px;
+}
+
+@media (max-width: 1024px) {
+  .bt-action {
+    font-size: 18px;
+    padding: 16px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bt-action {
+    font-size: 16px;
+    padding: 12px 32px;
+  }
+}
+

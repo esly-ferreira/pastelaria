@@ -1,0 +1,80 @@
+.bg {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 64px;
+}
+
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../imgs/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  transition: transform 0.1s ease-out;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin: 0 auto;
+  padding: 0 32px;
+  padding-top: 140px;
+}
+
+.bloco-2 {
+  position: relative;
+}
+
+.bloco-2 span {
+  position: absolute;
+  width: 100px;
+  left: -200;
+}
+
+.bloco-2 img {
+  width: 600px;
+}
+
+.local {
+  padding-left: 46px;
+  margin-top: 24px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+.local span {
+  background-image: url(../imgs/pin.svg);
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  bottom: 5;
+  left: -5;
+}
+
+@media (max-width: 1366px) {
+  .hero {
+    grid-template-columns: 1fr 2fr;
+  }
+  .bloco-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+  }
+  .bloco-2 img {
+    max-width: 90%;
+    height: auto;
+  }
+}
+
+@media (max-width: 924px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
